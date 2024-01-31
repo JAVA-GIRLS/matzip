@@ -9,6 +9,13 @@ gradlew
 gradlew.bat
 settings.gradle
 
+# Ignore S3 PRIVATE configuration in application.properties
+/src/main/resources/application.properties
+!/src/main/resources/application.properties
+/src/main/resources/application*.properties
+/cloud/aws/credentials.properties
+
+
 ### STS ###
 .apt_generated
 .classpath
