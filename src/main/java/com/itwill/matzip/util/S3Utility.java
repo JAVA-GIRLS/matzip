@@ -39,11 +39,11 @@ public class S3Utility {
     
     // 파일 업로드 및 URL 생성
     /**
-     * 단일 이미지 파일을 S3 버킷에 업로드하고 해당 이미지의 URL을 생성.
+     * 단일 이미지 파일을 S3 버킷에 업로드, 이미지의 URL을 생성.
      * 
      * @param file        업로드할 이미지 파일(MultipartFile)
-     * @param s3FileName  S3에 저장될 파일의 이름
-     * @return            업로드된 이미지의 URL
+     * @param s3FileName  S3에 저장될 파일 이름
+     * @return 업로드된 이미지 URL
      */
     public String uploadImageToS3(MultipartFile file, String s3FileName) {
         // 파일 확장자 체크
@@ -75,10 +75,10 @@ public class S3Utility {
 
     // 파일 여러 개 업로드, URL 생성
     /**
-     * 여러 이미지 파일을 S3 버킷에 업로드하고 각 이미지파일의 URL 생성.
+     * 여러 이미지 파일을 S3 버킷에 업로드하고 이미지파일들의 URL 생성.
      * 
-     * @param files  업로드할 이미지 파일 목록(List<MultipartFile>)
-     * @return       업로드된 이미지의 URL 목록
+     * @param files 업로드할 이미지 파일 목록(List<MultipartFile>)
+     * @return 업로드된 이미지의 URL 목록
      */
     public List<String> uploadImageListToS3(List<MultipartFile> files) {
         List<String> uploadedUrls = new ArrayList<>();
@@ -175,7 +175,7 @@ public class S3Utility {
      * S3에 업로드된 파일의 URL을 생성. (만료 시간 설정x)
      * 
      * @param s3FileName  URL 생성할 파일의 이름
-     * @return            생성된 URL(String)
+     * @return 생성된 URL(String)
      */
     private String generateUrl(String s3FileName) {
         try {
@@ -193,7 +193,7 @@ public class S3Utility {
      * 파일 확장자가 허용되는지 확인
      * 
      * @param filename  확인할 파일명
-     * @return          허용 여부(Boolean)
+     * @return 허용 여부(Boolean)
      */
     private boolean isImageExtensionAllowed(String filename) {
         String fileExtension = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
